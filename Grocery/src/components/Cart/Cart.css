@@ -1,0 +1,139 @@
+.cart {
+  width: 80%;
+  margin: 90px auto;
+  padding: 20px;
+}
+.cart-text{
+  text-align: center;
+  font-weight: 1200;
+}
+.cart-continue{
+  border: none;
+  padding: 15px;
+  margin: 10px;
+  background-color: #f3eded;
+}
+.cart h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.cart-item img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.item-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  color:  #2c3e50;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: -9px;
+}
+
+.increment-button,
+.decrement-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.increment-button:hover,
+.decrement-button:hover {
+  background-color: #e0e0e0;
+}
+
+.quantity-controls span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.remove-button {
+  background-color: rgb(160, 38, 38);
+  color: white;
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-button:hover {
+  background-color: #e53935;
+}
+
+.cart-total {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.cart-total h3 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.cart-total button {
+  background-color: rgb(158, 152, 152);
+  margin-top: 20px;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart-total button:hover {
+  background-color: #b5b5b5;
+}
