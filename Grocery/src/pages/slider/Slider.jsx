@@ -21,21 +21,21 @@ import i15 from '../../img/sweets/soan appudi.jpg';
 
 const Slider = () => {
   const images = [
-    { id: 1, Title: 'Munch', image: i1, price: '$10' },
-    { id: 2, Title: 'KinderJoy', image: i2, price: '$15' },
-    { id: 3, Title: 'Chocolates', image: i3, price: '$8' },
-    { id: 4, Title: 'Kisses', image: i4, price: '$12' },
-    { id: 5, Title: 'Mixture', image: i5, price: '$9' },
-    { id: 6, Title: 'Dark fantastic', image: i6, price: '$6' },
-    { id: 7, Title: 'Onion', image: i7, price: '$2' },
-    { id: 8, Title: 'Papaya', image: i8, price: '$5' },
-    { id: 9, Title: 'Capsicum', image: i9, price: '$3' },
-    { id: 10, Title: 'Potato', image: i10, price: '$4' },
-    { id: 11, Title: 'Pomegranate', image: i11, price: '$7' },
-    { id: 12, Title: 'Almond', image: i12, price: '$14' },
-    { id: 13, Title: 'Laddu', image: i13, price: '$11' },
-    { id: 14, Title: 'Palkova', image: i14, price: '$13' },
-    { id: 15, Title: 'Soan Pappudi', image: i15, price: '$16' },
+    { id: 1, Title: 'Munch', image: i1, price: '10' },
+    { id: 2, Title: 'KinderJoy', image: i2, price: '15' },
+    { id: 3, Title: 'Chocolates', image: i3, price: '8' },
+    { id: 4, Title: 'Kisses', image: i4, price: '12' },
+    { id: 5, Title: 'Mixture', image: i5, price: '9' },
+    { id: 6, Title: 'Dark fantastic', image: i6, price: '6' },
+    { id: 7, Title: 'Onion', image: i7, price: '12' },
+    { id: 8, Title: 'Papaya', image: i8, price: '10' },
+    { id: 9, Title: 'Capsicum', image: i9, price: '6' },
+    { id: 10, Title: 'Potato', image: i10, price: '4' },
+    { id: 11, Title: 'Pomegranate', image: i11, price: '9' },
+    { id: 12, Title: 'Almond', image: i12, price: '14' },
+    { id: 13, Title: 'Laddu', image: i13, price: '11' },
+    { id: 14, Title: 'Palkova', image: i14, price: '13' },
+    { id: 15, Title: 'Soan Pappudi', image: i15, price: '16' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

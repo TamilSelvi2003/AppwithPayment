@@ -1,15 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { removeItem, decrementQuantity, incrementQuantity } from "../../redux/slices/userSlice";
-import { ToastContainer } from 'react-toastify';
-// import { toast } from 'react-toastify'; 
-import 'react-toastify/dist/ReactToastify.css'; 
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './Cart.css';
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
@@ -25,6 +25,10 @@ const Cart = () => {
     dispatch(decrementQuantity(id));
   };
 
+  const handleProceedToPayment = () => {
+    navigate("/payment");
+  };
+
   return (
     <div className="cart">
       <h2>Your Shopping Cart</h2>
@@ -32,7 +36,7 @@ const Cart = () => {
         <p className="cart-text">
           Your cart is empty <br />
           <Link to="/category">
-           <button className="cart-continue">Continue Shopping</button>
+            <button className="cart-continue">Continue Shopping</button>
           </Link>
         </p>
       ) : (
@@ -61,7 +65,7 @@ const Cart = () => {
           </div>
           <div className="cart-total">
             <h3>Total: ${totalPrice.toFixed(2)}</h3>
-            <button>Proceed to payment</button>
+            <button onClick={handleProceedToPayment}>Proceed to payment</button>
           </div>
         </div>
       )}

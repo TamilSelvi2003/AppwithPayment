@@ -22,18 +22,18 @@ import Header from "../../components/header/Header";
 import About from "../About/About";
 
 const items = [
-  { id: 1, image: i1, title: "Orange", price: 15.99, oldPrice: 20.99 },
-  { id: 2, image: i2, title: "PineApple", price: 15.99, oldPrice: 20.99 },
-  { id: 3, image: i3, title: "Banana", price: 15.99, oldPrice: 20.99 },
-  { id: 4, image: i4, title: "Papaya", price: 15.99, oldPrice: 20.99 },
-  { id: 5, image: i5, title: "Tomato", price: 15.99, oldPrice: 20.99 },
-  { id: 6, image: i6, title: "Brinjal", price: 15.99, oldPrice: 20.99 },
-  { id: 7, image: i7, title: "Capsicum", price: 15.99, oldPrice: 20.99 },
-  { id: 8, image: i8, title: "Corn", price: 15.99, oldPrice: 20.99 },
-  { id: 9, image: i9, title: "Cashew", price: 15.99, oldPrice: 20.99 },
-  { id: 10, image: i10, title: "Almond", price: 15.99, oldPrice: 20.99 },
-  { id: 11, image: i11, title: "Dates", price: 15.99, oldPrice: 20.99 },
-  { id: 12, image: i12, title: "Pistachio", price: 15.99, oldPrice: 20.99 },
+  { id: 1, image: i1, title: "Orange", price: 16, oldPrice: 20 },
+  { id: 2, image: i2, title: "PineApple", price: 19, oldPrice: 20.59 },
+  { id: 3, image: i3, title: "Banana", price: 11, oldPrice: 15.95 },
+  { id: 4, image: i4, title: "Papaya", price: 13, oldPrice: 20.39 },
+  { id: 5, image: i5, title: "Tomato", price: 22, oldPrice: 26.65 },
+  { id: 6, image: i6, title: "Brinjal", price: 15, oldPrice: 16.93 },
+  { id: 7, image: i7, title: "Capsicum", price: 29, oldPrice: 34.19 },
+  { id: 8, image: i8, title: "Corn", price: 12, oldPrice: 17.21 },
+  { id: 9, image: i9, title: "Cashew", price: 29, oldPrice: 31.09 },
+  { id: 10, image: i10, title: "Almond", price: 25.99, oldPrice: 27.99 },
+  { id: 11, image: i11, title: "Dates", price: 18.99, oldPrice: 20.99 },
+  { id: 12, image: i12, title: "Pistachio", price: 25.99, oldPrice: 30.9 },
 ];
 
 const Product = () => {

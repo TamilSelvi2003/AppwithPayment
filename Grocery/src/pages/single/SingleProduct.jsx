@@ -37,7 +37,7 @@ const SingleProduct = () => {
             </div>
             <div className="single-product-details">
                 <h2>{Title}</h2>
-                <p>{price}</p>
+                <p>${price}</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus Dolore dolorum voluptates nesciunt vel maxime hic, facere soluta id sint odio earum ducimus perspiciatis.</p>
                 <div className="buttons">
                     <button onClick={handleAddToCart} className="add-to-cart-btn">
