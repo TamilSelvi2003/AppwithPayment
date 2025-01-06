@@ -12,10 +12,11 @@ const PaymentRoute = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector((state) => state.cart.items); 
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const [loading, setLoading] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -30,13 +31,13 @@ const PaymentRoute = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ amount: totalPrice * 100 }), // amount in cents
+        body: JSON.stringify({ amount: totalPrice * 100 }),
       });
 
       const { clientSecret, error } = await response.json();
 
       if (error) {
-        toast.error(error);
+        toast.error(error.message);
         setLoading(false);
         return;
       }
@@ -53,8 +54,8 @@ const PaymentRoute = () => {
         toast.error(confirmError.message);
       } else if (paymentIntent.status === "succeeded") {
         toast.success("Payment successful!");
-        dispatch({ type: "cart/clearCart" });
-        navigate("/");
+        dispatch({ type: "cart/clearCart" }); // Clear cart after successful payment
+        setPaymentSuccess(true); 
       } else {
         toast.error("Payment failed!");
       }
@@ -65,16 +66,28 @@ const PaymentRoute = () => {
     }
   };
 
+  const handleDoneClick = () => {
+    navigate("/");
+  };
+
   return (
     <div className="payment-route">
-      <h2>Proceed to Payment</h2>
-      <form onSubmit={handleSubmit}>
-        <h3>Payment Information</h3>
-        <CardElement />
-        <button type="submit" disabled={!stripe || loading}>
-          {loading ? "Processing..." : `Pay $${totalPrice}`}
-        </button>
-      </form>
+      {paymentSuccess ? (
+        <div className="payment-success">
+          <h2>Thank you for your order!</h2>
+          <button onClick={handleDoneClick}>Done</button>
+        </div>
+      ) : (
+        <>
+          <form onSubmit={handleSubmit}>
+            <h3>Payment Information</h3>
+            <CardElement />
+            <button type="submit" disabled={!stripe || loading}>
+              {loading ? "Processing..." : `Pay $${totalPrice.toFixed(2)}`}
+            </button>
+          </form>
+        </>
+      )}
       <ToastContainer />
     </div>
   );

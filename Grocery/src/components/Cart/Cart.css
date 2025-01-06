@@ -137,3 +137,9 @@
 .cart-total button:hover {
   background-color: #b5b5b5;
 }
+
+@media (max-width:486px){
+    .cart{
+      margin-top: 180px;
+    }
+}

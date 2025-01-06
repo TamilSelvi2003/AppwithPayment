@@ -33,7 +33,7 @@ const items = [
   { id: 9, image: i9, title: "Cashew", price: 29, oldPrice: 31.09 },
   { id: 10, image: i10, title: "Almond", price: 25.99, oldPrice: 27.99 },
   { id: 11, image: i11, title: "Dates", price: 18.99, oldPrice: 20.99 },
-  { id: 12, image: i12, title: "Pistachio", price: 25.99, oldPrice: 30.9 },
+  { id: 12, image: i12, title: "Munch", price: 25.99, oldPrice: 30.9 },
 ];
 
 const Product = () => {

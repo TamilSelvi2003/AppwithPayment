@@ -1,28 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import { FaShippingFast, FaHeadphones, FaLeaf, FaUndo } from 'react-icons/fa'; 
 import './Header.css';
 import { useNavigate } from 'react-router-dom';
+import s1 from '../../img/bgc.jpg';
+import s3 from '../../img/bb3.jpg';
+import s4 from '../../img/snack.jpg'
+import s5 from '../../img/bb4.avif'
 
 const Header = () => {
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
+  
+  const images = [s1, s3,s4,s5];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleShopNowClick = () => {
-    navigate('/product');  
+    navigate('/product');
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000); 
+    
+    return () => clearInterval(intervalId);
+  }, [images.length]);
+
   return (
     <>
       <div className="background-container">
         <div className="background-image">
+          <img src={images[currentImageIndex]} alt="Slider" />
           <div className="text-overlay">
             <h1>Treat Yourself</h1>
-            <p>"Fill your cart with goodness, and make everything special in your life!".</p>
+            <p>Start your healthy journey with us, filled with nature's best.</p>
             <Link to="/">  
               <button onClick={handleShopNowClick} className="table">Shop Now</button>
             </Link>
           </div>
         </div>
       </div>
+
       <section className="benefits">
         <div className="benefit-item">
           <FaShippingFast className="icon" />

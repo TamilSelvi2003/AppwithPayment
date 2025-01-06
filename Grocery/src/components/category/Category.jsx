@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { addItem } from "../../redux/slices/userSlice";
 import { addFavorite } from "../../redux/slices/favouritesSlice";
-import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import "./Category.css";
-
-// Import images
 import i1 from '../../img/veg/onion.webp';
 import i2 from '../../img/sweets/Atta-Ka-Sheera.jpg';
 import i3 from '../../img/veg/tomato.webp';
@@ -45,9 +43,19 @@ import i37 from '../../img/nuts/i6.webp';
 import i38 from '../../img/nuts/i7.jpg';
 import i39 from '../../img/nuts/i8.jpg';
 import i40 from '../../img/nuts/i9.jpg';
-// import i41 from '../../img/nuts/c5.webp';
+import i90 from '../../img/veg/ad.jpg';
+import i92 from '../../img/veg/beet.jpg';
+import i93 from '../../img/veg/carrot.jpg';
+import i94 from '../../img/fruits/jack.jpg';
+import i95 from '../../img/fruits/custard.jpg';
+import i96 from '../../img/fruits/star.jpg';
+import i97 from '../../img/sweets/modak.jpg';
+import i98 from '../../img/sweets/swasthi.webp';
+import i99 from '../../img/nuts/hazel.jpg';
+import i91 from '../../img/nuts/wal.jpg';
+import i100 from '../../img/nuts/pea.jpg';
 
-
+// Category images
 import c1 from '../../img/categories/All.png';
 import c2 from '../../img/categories/veg.jpg';
 import c3 from '../../img/categories/fruit.jpg';
@@ -56,8 +64,8 @@ import c5 from '../../img/categories/nuts.webp';
 import c6 from '../../img/categories/snack.jpg';
 
 const Category = () => {
-
   const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.products);
 
   const categories = [
     { name: "All", image: c1 },
@@ -68,43 +76,39 @@ const Category = () => {
     { name: "Snacks", image: c6 },
   ];
 
-  // Items array
   const items = [
     { id: 1, image: i2, title: 'Atta Ka Sheera', price: 15, oldPrice: 20.99, category: 'sweets' },
     { id: 2, image: i1, title: 'Onion', price: 21, oldPrice: 34.99, category: 'vegetables' },
     { id: 3, image: i3, title: 'Tomato', price: 19, oldPrice: 24.99, category: 'vegetables' },
     { id: 4, image: i4, title: 'Potato', price: 9, oldPrice: 14.99, category: 'vegetables' },
-    { id: 5, image: i5, title: 'ladies finger', price: 13, oldPrice: 14.99, category: 'vegetables' },
+    { id: 5, image: i5, title: 'Ladies Finger', price: 13, oldPrice: 14.99, category: 'vegetables' },
     { id: 6, image: i6, title: 'Brinjal', price: 16, oldPrice: 20.99, category: 'vegetables' },
     { id: 7, image: i7, title: 'Capsicum', price: 10, oldPrice: 14.99, category: 'vegetables' },
     { id: 8, image: i9, title: 'Corn', price: 13, oldPrice: 15.99, category: 'vegetables' },
-    { id: 9, image: i10, title: 'Bitter Gourd', price:16, oldPrice: 16, category: 'vegetables' },
+    { id: 9, image: i10, title: 'Bitter Gourd', price: 16, oldPrice: 16, category: 'vegetables' },
     { id: 10, image: i11, title: 'Ridge Gourd', price: 10, oldPrice: 14.99, category: 'vegetables' },
-    // { id: 2, image: '/img/veg/onion.webp', title: 'Onion', price: 10.99, oldPrice: 14.99, category: 'vegetables' },
     { id: 11, image: i8, title: 'Banana', price: 5, oldPrice: 7.9, category: 'fruits' },
     { id: 12, image: i12, title: 'Anjeer', price: 9, oldPrice: 10, category: 'fruits' },
     { id: 13, image: i13, title: 'Apple', price: 9, oldPrice: 12, category: 'fruits' },
-    { id: 14, image: i14, title: 'kiwi', price: 20, oldPrice: 29, category: 'fruits' },
-    { id: 15, image: i15, title: 'musk melon', price: 19, oldPrice: 27, category: 'fruits' },
-    { id: 16, image: i16, title: 'orange', price: 10, oldPrice: 14, category: 'fruits' },
-    // { id: 50, image: i50, title: 'Gulab jamun', price: 5.99, oldPrice: 7.99, category: 'fruits' },
-    { id: 18, image: i17, title: 'pineapple', price: 13, oldPrice: 19, category: 'fruits' },
-    { id: 19, image: i18, title: 'pomegranate', price: 18, oldPrice: 21, category: 'fruits' },
-    { id: 20, image: i19, title: 'water melon', price:14, oldPrice: 17, category: 'fruits' },
-    { id: 23, image: i20, title: 'Cashew', price: 23, oldPrice: 25, category: 'nuts' },
+    { id: 14, image: i14, title: 'Kiwi', price: 20, oldPrice: 29, category: 'fruits' },
+    { id: 15, image: i15, title: 'Musk Melon', price: 19, oldPrice: 27, category: 'fruits' },
+    { id: 16, image: i16, title: 'Orange', price: 10, oldPrice: 14, category: 'fruits' },
+    { id: 17, image: i17, title: 'Pineapple', price: 13, oldPrice: 19, category: 'fruits' },
+    { id: 18, image: i18, title: 'Pomegranate', price: 18, oldPrice: 21, category: 'fruits' },
+    { id: 19, image: i19, title: 'Watermelon', price: 14, oldPrice: 17, category: 'fruits' },
+    { id: 20, image: i20, title: 'Cashew', price: 23, oldPrice: 25, category: 'nuts' },
+    // { id: 21, image: i0, title: 'Almond', price: 20, oldPrice: 25, category: 'nuts' },
+    { id: 22, image: i23, title: 'Papaya', price: 10, oldPrice: 20, category: 'fruits' },
+    { id: 23, image: i24, title: 'Strawberry', price: 29, oldPrice: 22.99, category: 'fruits' },
     { id: 100, image: i0, title: 'almond', price: 20, oldPrice: 25, category: 'nuts' },
     { id: 24, image: i25, title: 'Soan pappudi', price: 17, oldPrice: 20, category: 'sweets' },
     { id: 25, image: i26, title: 'dates', price: 21, oldPrice: 30, category: 'nuts' },
     { id: 26, image: i27, title: 'pista', price: 24, oldPrice: 25, category: 'nuts' },
     { id: 27, image: i28, title: 'walnut', price: 25, oldPrice: 29, category: 'nuts' },
- 
-    // { id: 51, image: i51, title: 'Kaju Jalebi', price: 18.99, oldPrice: 22.99, category: 'sweets' },
     { id: 29, image: i30, title: 'Dry pean', price: 18, oldPrice: 20.99, category: 'sweets' },
     { id: 30, image: i31, title: 'Laddu', price: 14, oldPrice: 17, category: 'sweets' },
     { id: 31, image: i32, title: 'palkova', price: 19, oldPrice: 22, category: 'sweets' },
-    { id: 32, image: i24, title: 'Strawberry', price: 29, oldPrice: 22.99, category: 'fruits' },
-    { id: 33, image: i23, title: 'pappaya', price: 10, oldPrice: 20, category: 'fruits' },
-    { id: 34, image: i52, title: 'Kur Kur', price: 13, oldPrice: 16, category: 'snacks' },
+     { id: 34, image: i52, title: 'Kur Kur', price: 13, oldPrice: 16, category: 'snacks' },
     { id: 35, image: i33, title: 'Mixture', price: 18, oldPrice: 21, category: 'snacks' },
     { id: 36, image: i34, title: 'dark Fantastic', price: 19, oldPrice: 26, category: 'snacks' },
     { id: 38, image: i35, title: 'Nutric cjoice', price: 18, oldPrice: 22.9, category: 'snacks' },
@@ -112,12 +116,22 @@ const Category = () => {
     { id: 39, image: i37, title: 'Jim Jam', price: 18, oldPrice: 22, category: 'snacks' },
     { id: 40, image: i38, title: 'potato chips', price: 14, oldPrice: 25, category: 'snacks' },
     { id: 41, image: i39, title: 'samosa', price: 10, oldPrice: 18, category: 'snacks' },
-    { id: 42, image: i40, title: 'roll', price: 11, oldPrice: 12.9, category: 'snacks' },
-    
-  ];
+    { id: 42, image: i40, title: 'potato roll', price: 11, oldPrice: 12.9, category: 'snacks' },
+    { id: 43, image: i90, title: 'Raddish', price: 11, oldPrice: 12.9, category: 'vegetables' },
+    { id: 44, image: i91, title: 'walnut', price: 11, oldPrice: 12.9, category: 'nuts' },
+    { id: 45, image: i92, title: 'Beetroot', price: 11, oldPrice: 12.9, category: 'vegetables' },
+    { id: 46, image: i93, title: 'Carrot', price: 11, oldPrice: 12.9, category: 'vegetables' },
+    { id: 47, image: i94, title: 'Jackfruit', price: 11, oldPrice: 12.9, category: 'fruits' },
+    { id: 48, image: i95, title: 'Custard Apple', price: 11, oldPrice: 12.9, category: 'fruits' },
+    { id: 49, image: i96, title: 'Star fruit', price: 11, oldPrice: 12.9, category: 'fruits' },
+    { id: 50, image: i97, title: 'modak', price: 11, oldPrice: 12.9, category: 'sweets' },
+    { id: 51, image: i98, title: 'swasthi', price: 11, oldPrice: 12.9, category: 'sweets' },
+    { id: 52, image: i99, title: 'HazelNuts', price: 11, oldPrice: 12.9, category: 'muts' },
+    { id: 53, image: i100, title: 'Peanuts', price: 11, oldPrice: 12.9, category: 'nuts' },
  
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  ];
 
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category.name);
@@ -126,11 +140,10 @@ const Category = () => {
   const filteredItems =
     selectedCategory === "All"
       ? items
-      : items.filter((item) => item.category === selectedCategory.toLowerCase());
+      : items.filter((item) => item.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
     <div className="app-container">
-
       <div className="categories">
         {categories.map((category, index) => (
           <div
@@ -143,29 +156,48 @@ const Category = () => {
           </div>
         ))}
       </div>
-
-
       <div className="items">
-        {filteredItems.map((item) => (
-          <div key={item.id} className="item">
-            <img src={item.image} alt={item.title} />
-            <p>{item.title}</p>
-            <p className="price">
-              <span>${item.price}</span> <del>${item.oldPrice}</del>
-            </p>
-            <div className="button-group">
-              <button onClick={() => dispatch(addItem(item))}>
-                <FaShoppingCart /> 
-              </button>
-              <button onClick={() => dispatch(addFavorite(item))}>
-                <FaHeart />
-              </button>
-            </div>
-          </div>
-        ))}
+  {filteredItems.length > 0 ? (
+    filteredItems.map((item) => (
+      <div key={item.id} className="item">
+        <img src={item.image} alt={item.title} />
+        <p>{item.title}</p>
+        <p className="price">
+          <span>${item.price}</span> <del>${item.oldPrice}</del>
+        </p>
+        <div className="button-group">
+          <button onClick={() => dispatch(addItem(item))}>
+            <FaShoppingCart /> 
+          </button>
+          <button onClick={() => dispatch(addFavorite(item))}>
+            <FaHeart />
+          </button>
+        </div>
       </div>
+    ))
+  ) : (
+    <p>No items available in this category.</p>
+  )}
+</div>
+
+      <ul className="admins">
+                {products.map((product) => (
+                    <li key={product.id}>
+                        <img src={product.imageUrl} alt={product.name} width="50" />
+                        <h3>{product.name}</h3>
+                        <p> ${product.price}</p>
+                        {/* <p> {product.category}</p> */}
+                      <div className="admin-btn">
+                        <button className="car" onClick={() => dispatch(addItem(product))} >  <FaShoppingCart /></button>
+                        <button className="hat" onClick={() => dispatch(addFavorite(product))}> <FaHeart /></button>
+                      </div>
+                    </li>
+                ))}
+            </ul>
     </div>
   );
 };
 
 export default Category;
+
+

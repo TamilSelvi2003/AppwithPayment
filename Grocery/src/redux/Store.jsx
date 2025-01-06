@@ -1,12 +1,13 @@
-// redux/store.js
-import { configureStore } from '@reduxjs/toolkit';
+ import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from './slices/userSlice';
-import favoritesReducer from './slices/favouritesSlice'; // Import favorites slice
+import favoritesReducer from './slices/favouritesSlice'; 
+import productReducer from './slices/ProductSlice'
 
 const store = configureStore({
   reducer: {
     cart: cartReducer,
-    favorites: favoritesReducer, // Add favorites reducer
+    favorites: favoritesReducer,
+    products: productReducer, 
   },
 });
 

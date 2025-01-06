@@ -3,12 +3,12 @@ import './SingleProduct.css';
 import { addItem } from "../../redux/slices/userSlice";
 import { addFavorite } from "../../redux/slices/favouritesSlice";
 import { useLocation } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
 const SingleProduct = () => {
     const dispatch = useDispatch();
-    // const cartItems = useSelector((state) => state.cart.items);
+    const cartItems = useSelector((state) => state.cart.items);
 
     const location = useLocation();
     const { image, Title, price, id } = location.state || {};

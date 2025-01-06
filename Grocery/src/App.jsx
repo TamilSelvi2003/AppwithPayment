@@ -1,20 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar'; 
-import Product from './pages/PRoducts/Product'; 
-import Cart from './components/Cart/Cart'; 
+import Navbar from './components/Navbar/Navbar';
+import Product from './pages/PRoducts/Product';
+import Cart from './components/Cart/Cart';
 import Favourites from './components/Favourites/Favourites';
-import About from './pages/About/About'; 
+import About from './pages/About/About';
 import Category from './components/category/Category';
 import Slider from './pages/slider/Slider';
 import SingleProduct from './pages/single/SingleProduct';
 import Footer from './components/Footer/Footer';
-import PaymentRoute from './components/routes/PaymentRoute'; 
-import { Elements } from '@stripe/react-stripe-js';  // Import Elements provider
-import { loadStripe } from '@stripe/stripe-js';  // Import loadStripe function
+import PaymentRoute from './components/routes/PaymentRoute';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import './App.css';
+import SignIn from './components/Login/SignInForm';
+import AdminPanel from './components/Admin/AdminPannel';
 
-// Initialize Stripe with your public key (replace with your actual key)
+
 const stripePromise = loadStripe('pk_test_51QWuxERuEnnwd1rf6ADGoT15NF4dcpnIjma6afFW18I3ouzyPa5cn2IEw4fCpLoSQD4H72JVFSMI6wyqG3bwJTIa00Uh7A2ibL');
 
 const App = () => {
@@ -24,23 +26,23 @@ const App = () => {
         <Navbar />
         <div className="main-content">
           <Routes>
-            <Route path="/" element={<Product />} /> 
-            <Route path="/about" element={<About />} /> 
-            <Route path="/cart" element={<Cart />} /> 
+            <Route path="/" element={<Product />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/category" element={<Category />} />
             <Route path="/category/:name" element={<Category />} />
-            <Route path="/favorites" element={<Favourites />} /> 
-            <Route path="/slider" element={<Slider />} /> 
-            <Route path="/singleproduct" element={<SingleProduct />} /> 
-
-            {/* Wrap PaymentRoute with Elements provider */}
-            <Route 
-              path="/payment" 
+            <Route path="/favorites" element={<Favourites />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/slider" element={<Slider />} />
+            <Route path="/singleproduct" element={<SingleProduct />} />
+            <Route path="/admin" element={<AdminPanel />} />
+            <Route
+              path="/payment"
               element={
-                <Elements stripe={stripePromise}>  {/* Wrapping with Elements */}
+                <Elements stripe={stripePromise}>
                   <PaymentRoute />
                 </Elements>
-              } 
+              }
             />
           </Routes>
         </div>
