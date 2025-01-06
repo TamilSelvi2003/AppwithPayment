@@ -33,7 +33,7 @@ const Header = () => {
           <img src={images[currentImageIndex]} alt="Slider" />
           <div className="text-overlay">
             <h1>Treat Yourself</h1>
-            <p>Start your healthy journey with us, filled with nature's best.</p>
+            <p>Start your healthy journey with us, filled with nature.</p>
             <Link to="/">  
               <button onClick={handleShopNowClick} className="table">Shop Now</button>
             </Link>

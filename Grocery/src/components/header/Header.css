@@ -121,7 +121,7 @@ p {
 @media (max-width: 768px) {
   .background-container {
     height: auto;
-    margin-top: 200px;
+    margin-top: 180px;
   }
 
   .background-image {
@@ -129,11 +129,14 @@ p {
   }
 
   .text-overlay {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-  }
+    position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
 
   .text-overlay h1 {
     font-size: 28px;
@@ -141,7 +144,7 @@ p {
 
   .text-overlay p {
     font-size: 16px;
-    margin-left: 0; 
+    margin-left: 40px; 
   }
 
   .text-overlay button {
@@ -164,14 +167,14 @@ p {
   
 
  
-   p {
+  .benefit-item p {
      display: none;
    }
 }
 
 @media (max-width: 486px) {
   .background-container {
-    margin-top: 188px;
+    margin-top: 180px;
   }
 
   .text-overlay {
@@ -212,7 +215,7 @@ p {
 h3{
   font-size: 1em;
 }
-  p {
+.benefit-item p {
     display: none;
   }
 }

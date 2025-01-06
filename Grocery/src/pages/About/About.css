@@ -93,8 +93,8 @@
 @media (max-width: 768px) {
   .about-container {
     display: flex;
-    flex-direction: column;
-    gap: 20px; 
+    flex-direction: row;
+    gap: 35px; 
     margin-top:-30px;
     padding: 30px;
     align-items: center; 
@@ -103,6 +103,8 @@
   .about-text {
     padding-right: 0;
     text-align: center;
+    flex: 1;
+  /* padding-left: 70px; */
   }
 
   .about-text h1 {
@@ -112,6 +114,8 @@
   .about-text p {
     font-size: 15px;
     margin-bottom: 15px; 
+  text-align: justify;
+  color: #16212c;
   }
 
   .about-image img {
@@ -137,13 +141,14 @@
 
   .about-text h1 {
     font-size: 1.8rem;
-margin-left: -45px;
+margin-left: -75px;
   }
 
   .about-text p {
     font-size: 0.9rem;
     margin-bottom: 10px;
     text-align: justify;
+    margin-left: -60px;
   }
 
   .about-image img {

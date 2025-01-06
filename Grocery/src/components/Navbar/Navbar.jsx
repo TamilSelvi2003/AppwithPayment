@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import { useSelector } from 'react-redux'; 
 import { Link, NavLink ,useNavigate} from 'react-router-dom';  
-import { FaShoppingCart, FaHeart, FaUserCircle ,FaSearch} from 'react-icons/fa'; 
+import { FaShoppingCart, FaHeart, FaUserCircle } from 'react-icons/fa'; 
 import './Navbar.css';
-import logo from '../../../src/logo.jpg';
+import logo from '../../../public/leaf.jpg';
 
 const Navbar = () => {
   const cartItems = useSelector((state) => state.cart.items);

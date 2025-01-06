@@ -66,8 +66,8 @@ margin-top: 10px;
 }
 @media (max-width: 768px) {
   .payment-route {
-    width: 70%;
-    margin-top: 250px;
+    width: 90%;
+    margin-top: 280px;
     margin-left: -3px;
     padding: 15px;
   }
