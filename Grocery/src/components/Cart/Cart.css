@@ -137,25 +137,17 @@
 .cart-total button:hover {
   background-color: #b5b5b5;
 }
-/* 
-@media (max-width:486px){
-    .cart{
-      margin-top: 180px;
-      margin-left: -10px;
-    }
-} */
- /* For smaller devices (like mobile phones) */
-/* For devices with screen width up to 768px (tablet and mobile landscape) */
+
 @media (max-width: 768px) {
   .cart {
     width: 95%;
-    margin: 20px auto;
+margin-top: 200px;
     padding: 15px;
   }
 
   .cart-container {
     display: grid;
-    grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+    grid-template-columns: 2fr 1fr ;
     gap: 15px;
   }
 
@@ -171,7 +163,7 @@
 
   .cart-item {
     display: grid;
-    grid-template-columns: 1fr; /* Stack the image and info vertically */
+    grid-template-columns: 1fr; 
     gap: 10px;
     padding: 10px;
     border-radius: 8px;

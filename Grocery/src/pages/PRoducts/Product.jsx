@@ -19,7 +19,7 @@ import i11 from '../../img/nuts/dates.webp';
 import i12 from '../../img/nuts/c2.webp';
 import Newsletter from "../Newsletter/News";
 import Header from "../../components/header/Header";
-import About from "../About/About";
+// import About from "../About/About";
 
 const items = [
   { id: 1, image: i1, title: "Orange", price: 16, oldPrice: 20 },
@@ -62,7 +62,7 @@ const Product = () => {
   return (
     <>
       <Header />
-      <About />
+      {/* <About /> */}
       
       <section className="featured" id="featured">
         <h1 className="heading">

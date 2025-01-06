@@ -59,9 +59,8 @@
 @media (max-width: 768px) {
     .admin-container {
       width: 90%;
-      margin: 50px auto;
       padding: 15px;
-      margin-top: 190px;
+      margin-top: 210px;
     }
   
     .admin-head {
@@ -88,7 +87,7 @@
     }
   }
   
-  @media (max-width: 480px) {
+  @media (max-width: 486px) {
     .admin-container {
       width: 85%;
       padding: 10px;

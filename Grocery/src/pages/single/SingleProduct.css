@@ -69,8 +69,8 @@
     .single-product-container {
       grid-template-columns: 1fr; 
       height: auto;
-      margin-top: 200px;
-      
+      margin-top: 220px;
+
     }
   
     .single-product-image img {
