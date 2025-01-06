@@ -110,9 +110,97 @@ input[type="text"] {
   font-size: 14px;
   margin-bottom: 10px;
 }
-
+/* 
 @media (max-width:786px) {
   .header{
     margin-top: 260px;
+    position: relative;
+  }
+
+
+} */
+@media (max-width: 768px) {
+  .Sign {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  form {
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  input {
+    width: 85%;
+    font-size: 0.9rem;
+  }
+
+  .btn-form {
+    width: 80%;
+    padding: 10px;
+  }
+
+  .google-signin-btn {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .phone-signin-btn {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .close-btn {
+    top: 60px;
+    left: 80%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .Sign {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 200px;
+  }
+
+  form {
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+  input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .btn-form {
+    width: 78%;
+    padding: 10px;
+    margin-left: 14px;
+  }
+
+  .google-signin-btn {
+    width: 78%;
+    font-size: 14px;
+    padding: 8px 15px;
+    margin-left: 14px;
+  }
+
+  .phone-signin-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .close-btn {
+    top: 45px;
+    left: 90%;
+    transform: translateX(-50%);
   }
 }

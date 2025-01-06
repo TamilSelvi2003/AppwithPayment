@@ -70,10 +70,11 @@
       grid-template-columns: 1fr; 
       height: auto;
       margin-top: 200px;
+      
     }
   
     .single-product-image img {
-      width: 100%;
+      width: 96%;
     }
   }
   

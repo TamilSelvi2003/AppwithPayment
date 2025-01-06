@@ -121,7 +121,7 @@ p {
 @media (max-width: 768px) {
   .background-container {
     height: auto;
-    margin-top: 185px;
+    margin-top: 200px;
   }
 
   .background-image {
@@ -161,11 +161,17 @@ p {
   .benefits {
     justify-content: center;
   }
+  
+
+ 
+   p {
+     display: none;
+   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 486px) {
   .background-container {
-    margin-top: 50px;
+    margin-top: 188px;
   }
 
   .text-overlay {
@@ -195,19 +201,19 @@ p {
   }
   .benefit-item {
     flex: 1 1 100%; 
-    max-width: 100%;
+    /* max-width: 100%; */
   }
 
   .icon {
     font-size: 30px; 
   }
 
-  h3 {
-    font-size: 16px; 
-  }
-
+ 
+h3{
+  font-size: 1em;
+}
   p {
-    font-size: 12px; 
+    display: none;
   }
 }
 

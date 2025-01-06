@@ -141,5 +141,6 @@
 @media (max-width:486px){
     .cart{
       margin-top: 180px;
+      margin-left: -10px;
     }
 }

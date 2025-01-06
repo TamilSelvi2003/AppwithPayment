@@ -56,3 +56,66 @@
 .close:hover{
     background-color: red;
 }
+@media (max-width: 768px) {
+    .admin-container {
+      width: 90%;
+      margin: 50px auto;
+      padding: 15px;
+      margin-top: 190px;
+    }
+  
+    .admin-head {
+      font-size: 20px;
+    }
+  
+    .admin-container input {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      margin-left: 0;
+    }
+  
+    .btn-admin {
+      width: 50%;
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .close {
+      top: 10px;
+      left: 90%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-container {
+      width: 85%;
+      padding: 10px;
+      margin-top: 200px;
+      max-width: 400px;
+    }
+  
+    .admin-head {
+      font-size: 18px;
+    }
+  
+    .admin-container input {
+      font-size: 12px;
+      padding: 8px auto;
+      width: 95%;
+    }
+  
+    .btn-admin {
+      width: 100%;
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .close {
+      top: 5px;
+      left: 90%;
+      transform: translateX(-50%);
+    }
+  }
+  
