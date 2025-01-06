@@ -5,7 +5,7 @@ import { addItem } from "../../redux/slices/userSlice";
 import { addFavorite } from "../../redux/slices/favouritesSlice";
 import "./Category.css";
 import i1 from '../../img/veg/onion.webp';
-import i2 from '../../img/sweets/Atta-Ka-Sheera.jpg';
+import i2 from '../../img/sweets/Atta-ka-Sheera.jpg';
 import i3 from '../../img/veg/tomato.webp';
 import i4 from '../../img/veg/potato.webp';
 import i5 from '../../img/veg/ladies finger.webp';
