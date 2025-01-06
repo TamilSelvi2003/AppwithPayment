@@ -14,7 +14,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import './App.css';
 import SignIn from './components/Login/SignInForm';
-import AdminPanel from './components/Admin/AdminPannel';
+import AdminPanel from './components/admin/AdminPannel';
 
 
 const stripePromise = loadStripe('pk_test_51QWuxERuEnnwd1rf6ADGoT15NF4dcpnIjma6afFW18I3ouzyPa5cn2IEw4fCpLoSQD4H72JVFSMI6wyqG3bwJTIa00Uh7A2ibL');
