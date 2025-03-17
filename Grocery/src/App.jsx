@@ -16,6 +16,9 @@ import './App.css';
 import SignIn from './components/Login/SignInForm';
 import AdminPanel from './components/admin/AdminPannel';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const stripePromise = loadStripe('pk_test_51QWuxERuEnnwd1rf6ADGoT15NF4dcpnIjma6afFW18I3ouzyPa5cn2IEw4fCpLoSQD4H72JVFSMI6wyqG3bwJTIa00Uh7A2ibL');
 
@@ -23,6 +26,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
+              <ToastContainer position="top-right" autoClose={2000} />
         <Navbar />
         <div className="main-content">
           <Routes>
